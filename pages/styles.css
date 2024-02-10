@@ -1,0 +1,105 @@
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+.container {
+
+    /* Add container styles */
+    /* border: 2px solid red; */
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* .container label {
+    margin-top: 2vh;
+    font-weight: bolder;
+  } */
+
+  .logo {
+    width: 25%;
+  }
+  
+  .search-input {
+    /* Add search input styles */
+    margin-top: 3vh;
+    border: none;
+    border-bottom: 2px solid rgb(133, 133, 133);
+    padding: 2vh;
+    width: 20%;
+  }
+  
+  .information{
+    padding: 5vh;
+    margin-top: 2vh;
+    border-radius: 15px;
+    border: 2px solid rgb(243, 243, 243);
+    width: 80%;
+  }
+
+  .search_information {
+    border: 2px solid red;
+  }
+
+  .evolutions_header h3 {
+    border-bottom: 2px solid rgb(196, 196, 196);
+  }
+
+  .evolutions{
+    /* border: 2px solid rgb(0, 89, 255); */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5vh;
+  }
+
+  .evolutions li{
+    /* border: 2px solid rgb(208, 255, 0); */
+    width: auto;
+  }
+
+  .loading {
+    margin-top: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    /* border: 2px solid red; */
+  }
+
+  .no_found {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 5vh;
+    margin-bottom: 20vh;
+  }
+
+  .no_found h1 {
+    color: rgb(139, 139, 139);
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .type a {
+    border-radius: 5px;
+    padding: 0.5vh;
+  }
+  
+  .type.grass a {
+    background-color: rgb(61, 201, 85);
+    color: rgb(255, 255, 255);
+  }
+  
+  .type.fire a {
+    background-color: rgb(255, 85, 85);
+    color: rgb(255, 255, 255);
+  }
+  
+  .type.water a {
+    background-color: rgb(85, 116, 255);
+    color: rgb(255, 255, 255);
+  }
+  

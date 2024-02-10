@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1707586061847" clover="3.2.0">
+  <project timestamp="1707586061847" name="All files">
+    <metrics statements="8" coveredstatements="8" conditionals="8" coveredconditionals="6" methods="1" coveredmethods="1" elements="17" coveredelements="15" complexity="0" loc="8" ncloc="8" packages="2" files="2" classes="2"/>
+    <package name="graphql">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="queries.tsx" path="/Users/silapakaneragonhotmail.co.th/Desktop/Code/Next/search-pokemon/graphql/queries.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="test">
+      <metrics statements="6" coveredstatements="6" conditionals="8" coveredconditionals="6" methods="1" coveredmethods="1"/>
+      <file name="PokemonTest.tsx" path="/Users/silapakaneragonhotmail.co.th/Desktop/Code/Next/search-pokemon/test/PokemonTest.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="8" coveredconditionals="6" methods="1" coveredmethods="1"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="11" count="6" type="stmt"/>
+        <line num="12" count="6" type="stmt"/>
+        <line num="14" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="15" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="17" count="3" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
