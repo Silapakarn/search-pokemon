@@ -10,11 +10,15 @@ function Home() {
 
   const { data, loading, error } = useQuery(GET_POKEMON_BY_NAME, {
     variables: { name: searchQuery },
-    skip: !searchTriggered, 
+    skip: !searchTriggered, // Skip the query until searchTriggered becomes true
   });
 
   const handleSearch = (event: any) => {
     setSearchQuery(event.target.value);
+  };
+
+  const handleFindPokemon = () => {
+    setSearchTriggered(true);
   };
 
   const handleEvolutionClick = (evolutionName: any) => {
@@ -32,6 +36,7 @@ function Home() {
         placeholder="Search Pokémon by name"
         className='search-input'
       />
+       <button className='button-30' onClick={handleFindPokemon}>Find Pokemon</button>
       
       <div className='information'>
         {loading ? (
