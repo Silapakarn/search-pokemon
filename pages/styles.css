@@ -56,6 +56,7 @@
   .evolutions li{
     /* border: 2px solid rgb(208, 255, 0); */
     width: auto;
+    list-style-type: none;
   }
 
   .evolutions img:hover {
