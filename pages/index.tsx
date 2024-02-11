@@ -1,5 +1,4 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { useRouter } from 'next/router';
 import { GET_POKEMON_BY_NAME } from '../graphql/queries';
@@ -7,25 +6,21 @@ import { GET_POKEMON_BY_NAME } from '../graphql/queries';
 function Home() {
   const router = useRouter();
   const [searchQuery, setSearchQuery] = useState(router.query.name || '');
+  const [searchTriggered, setSearchTriggered] = useState(false);
 
   const { data, loading, error } = useQuery(GET_POKEMON_BY_NAME, {
     variables: { name: searchQuery },
-    skip: !searchQuery,
+    skip: !searchTriggered, 
   });
 
   const handleSearch = (event: any) => {
-    const { value } = event.target;
-    setSearchQuery(value);
-    router.push({ pathname: '/', query: { name: value } }, undefined, { shallow: true });
+    setSearchQuery(event.target.value);
   };
 
   const handleEvolutionClick = (evolutionName: any) => {
     setSearchQuery(evolutionName);
-    router.push({ pathname: '/', query: { name: evolutionName } }, undefined, { shallow: true });
+    setSearchTriggered(true);
   };
-
-  if (loading) return <div className='loading'><h1>Loading...</h1></div>;
-  if (error) return <h1>Error: {error.message}</h1>;
 
   return (
     <div className="container">
@@ -37,8 +32,13 @@ function Home() {
         placeholder="Search Pokémon by name"
         className='search-input'
       />
+      
       <div className='information'>
-        {data && data.pokemon ? (
+        {loading ? (
+          <div className='loading'><h1>Loading...</h1></div>
+        ) : error ? (
+          <h1>Error: {error.message}</h1>
+        ) : data && data.pokemon ? (
           <div key={data.pokemon.id}>
             <img src={data.pokemon.image} alt={data.pokemon.name} />
             <h1>{data.pokemon.name}</h1>
@@ -65,9 +65,9 @@ function Home() {
             {data.pokemon.evolutions && data.pokemon.evolutions.length > 0 && (
               <div className='evolutions_header'>
                 <h3>Evolutions:</h3>
-                <ul  className='evolutions'>
-                  {data.pokemon.evolutions.map((evolution: any) => (
-                    <li key={evolution.id} onClick={() => handleEvolutionClick(evolution.name)}>
+                <ul className='evolutions'>
+                  {data.pokemon.evolutions.map((evolution: any, index: any) => (
+                    <li key={index} onClick={() => handleEvolutionClick(evolution.name)}>
                       <img src={evolution.image} alt={evolution.name} />
                       <h1>{evolution.name}</h1>
                     </li>
@@ -88,6 +88,3 @@ function Home() {
 }
 
 export default Home;
-
-
-
