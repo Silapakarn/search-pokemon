@@ -10,7 +10,7 @@ function Home() {
 
   const { data, loading, error } = useQuery(GET_POKEMON_BY_NAME, {
     variables: { name: searchQuery },
-    skip: !searchTriggered, // Skip the query until searchTriggered becomes true
+    skip: !searchTriggered, 
   });
 
   const handleSearch = (event: any) => {

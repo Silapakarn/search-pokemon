@@ -58,6 +58,12 @@
     width: auto;
   }
 
+  .evolutions img:hover {
+    /* border: 2px solid red; */
+    width: 102%;
+    cursor: pointer;
+  }
+
   .loading {
     display: flex;
     flex-direction: column;
